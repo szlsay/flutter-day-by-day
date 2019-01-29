@@ -1,7 +1,7 @@
 # flutter-day-by-day
 2019年最全的flutter指导练习demo
 
-### day01-day17
+### day01-day18
 [仿照技术胖的Flutter实例视频教程](http://jspang.com) 
 
 1. day01 - 底部导航栏制作
@@ -21,6 +21,7 @@
 15. day15 - GridView网格列表组件
 16. day16 - 水平布局Row的使用
 17. day17 - 垂直布局Column组件
+18. day18 - Stack层叠布局
 
 <img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day01.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day02.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day03.png" width="30%" height="30%">
 
@@ -32,4 +33,5 @@
 
 <img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day13.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day14.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day15.png" width="30%" height="30%">
 
-<img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day16.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day17.png" width="30%" height="30%">
+<img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day16.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day17.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day18.png" width="30%" height="30%">
+
