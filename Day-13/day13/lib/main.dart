@@ -31,21 +31,20 @@ class MyApp extends StatelessWidget {
 
 
         body: new ListView(
-           children:<Widget>[
+          children:<Widget>[
             new Image.network(
               'http://jspang.com/static/upload/20181111/G-wj-ZQuocWlYOHM6MT2Hbh5.jpg'
             ),
-              new Image.network(
-      'http://jspang.com/static/upload/20181109/1bHNoNGpZjyriCNcvqdKo3s6.jpg'
-    ),
-     new Image.network(
-      'http://jspang.com/static/myimg/typescript_banner.jpg'
-    ),new Image.network(
-      'http://jspang.com/static/myimg/smile-vue.jpg'
-    )
-  ]
+            new Image.network(
+              'http://jspang.com/static/upload/20181109/1bHNoNGpZjyriCNcvqdKo3s6.jpg'
+            ),
+            new Image.network(
+              'http://jspang.com/static/myimg/typescript_banner.jpg'
+            ),new Image.network(
+              'http://jspang.com/static/myimg/smile-vue.jpg'
+            )
+          ]
         ),
-
 
 
       ),
