@@ -23,6 +23,7 @@
 17. day17 - 垂直布局Column组件
 18. day18 - Stack层叠布局
 19. day19 - 卡片组件布局
+20. day20 - 一般页面导航和返回
 
 <img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day01.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day02.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day03.png" width="30%" height="30%">
 
@@ -36,4 +37,4 @@
 
 <img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day16.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day17.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day18.png" width="30%" height="30%">
 
-<img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day19.png" width="30%" height="30%">
+<img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day19.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day20.png" width="30%" height="30%">
