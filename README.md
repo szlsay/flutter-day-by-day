@@ -26,6 +26,7 @@
 20. day20 - 一般页面导航和返回
 21. day21 - 导航参数的传递和接收
 22. day22 - 页面跳转并返回数据
+23. day23 - 静态资源和项目图片的处理
 
 <img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day01.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day02.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day03.png" width="30%" height="30%">
 
@@ -41,4 +42,4 @@
 
 <img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day19.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day20.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day21.png" width="30%" height="30%">
 
-<img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day22.png" width="30%" height="30%">
+<img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day22.png" width="30%" height="30%"><img src="https://github.com/STShenZhaoliang/flutter-day-by-day/blob/master/Demo-Image/day23.png" width="30%" height="30%">
