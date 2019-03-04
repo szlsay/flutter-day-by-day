@@ -4,7 +4,7 @@ import 'home_page.dart';
 import 'category_page.dart';
 import 'cart_page.dart';
 import 'member_page.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IndexPage extends StatefulWidget {
   final Widget child;
@@ -48,11 +48,13 @@ class _IndexPageState extends State<IndexPage> {
   @override
   void initState() {
     currentPage =tabBodies[currentIndex];
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
       backgroundColor:Color.fromRGBO(244, 245, 245, 1.0),
       bottomNavigationBar: BottomNavigationBar(
