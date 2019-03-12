@@ -27,10 +27,12 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   }
   @override
   Widget build(BuildContext context) {
+    var formData = {'lon':'115.02932','lat':'35.76189'};
+    
     return Scaffold(
       appBar: AppBar(title: Text('百姓生活+'),),
       body:FutureBuilder(
-        future:getHomePageContent(),
+        future:request("homePageContext", formData: formData),
         builder: (context,snapshot){
           if(snapshot.hasData){
              var data=json.decode(snapshot.data.toString());
@@ -60,11 +62,13 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                    Recommend(recommendList:recommendList), 
 
                    FloorTitle(picture_address:floor1Title),
-          FloorContent(floorGoodsList:floor1),
-          FloorTitle(picture_address:floor2Title),
-          FloorContent(floorGoodsList:floor2),
-          FloorTitle(picture_address:floor3Title),
-          FloorContent(floorGoodsList:floor3),
+                  FloorContent(floorGoodsList:floor1),
+                  FloorTitle(picture_address:floor2Title),
+                  FloorContent(floorGoodsList:floor2),
+                  FloorTitle(picture_address:floor3Title),
+                  FloorContent(floorGoodsList:floor3),
+
+          HotGoods(),
                ],
              ),
              );
@@ -309,6 +313,25 @@ class FloorContent extends StatelessWidget {
         onTap:(){print('点击了楼层商品');},
         child: Image.network(goods['image']),
       ),
+    );
+  }
+}
+
+
+class HotGoods extends StatefulWidget {
+  _HotGoodsState createState() => _HotGoodsState();
+}
+class _HotGoodsState extends State<HotGoods> {
+   void initState() { 
+     super.initState();
+     request('homePageBelowConten', formData: 1).then((val){
+         print(val);
+      });
+   }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+       child:Text('1111'),
     );
   }
 }
