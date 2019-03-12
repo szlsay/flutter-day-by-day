@@ -13,7 +13,18 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('111111111111111111111111111');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

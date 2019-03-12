@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'home_page.dart';
 import 'category_page.dart';
+import 'cart_page.dart';
 import 'member_page.dart';
 
 class IndexPage extends StatefulWidget {
@@ -33,10 +34,10 @@ class _IndexPageState extends State<IndexPage> {
     ),
   ];
 
-  final List tabBodies = [
+  final List<Widget> tabBodies = [
     HomePage(),
     CategoryPage(),
-    CategoryPage(),
+    CartPage(),
     MemberPage()
   ];
 
@@ -65,7 +66,10 @@ class _IndexPageState extends State<IndexPage> {
           });
         },
       ),
-      body: currentPage,
+      body: IndexedStack(
+        index: currentIndex,
+        children: tabBodies,
+      ),
     );
   }
 }
