@@ -15,6 +15,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
 
+  int page = 1;
+  List<Map> hotGoodsList = [];
+
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
@@ -23,6 +26,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   void initState() {
     // TODO: implement initState
     super.initState();
+     _getHotGoods();
     print('111111111111111111111111111');
   }
   @override
@@ -43,13 +47,12 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
              String  leaderPhone = data['data']['shopInfo']['leaderPhone']; //店长电话 
              List<Map> recommendList = (data['data']['recommend'] as List).cast(); // 商品推荐
 
-              String floor1Title =data['data']['floor1Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
-    String floor2Title =data['data']['floor2Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
-    String floor3Title =data['data']['floor3Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
-    List<Map> floor1 = (data['data']['floor1'] as List).cast(); //楼层1商品和图片 
-    List<Map> floor2 = (data['data']['floor2'] as List).cast(); //楼层1商品和图片 
-    List<Map> floor3 = (data['data']['floor3'] as List).cast(); //楼层1商品和图片 
-
+             String floor1Title =data['data']['floor1Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
+             String floor2Title =data['data']['floor2Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
+             String floor3Title =data['data']['floor3Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
+            List<Map> floor1 = (data['data']['floor1'] as List).cast(); //楼层1商品和图片 
+            List<Map> floor2 = (data['data']['floor2'] as List).cast(); //楼层1商品和图片 
+            List<Map> floor3 = (data['data']['floor3'] as List).cast(); //楼层1商品和图片 
 
              return 
              SingleChildScrollView(
@@ -67,8 +70,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                   FloorContent(floorGoodsList:floor2),
                   FloorTitle(picture_address:floor3Title),
                   FloorContent(floorGoodsList:floor3),
+                  _hotGoods(),
 
-          HotGoods(),
+          // HotGoods(),
                ],
              ),
              );
@@ -81,7 +85,85 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
       )
     );
   }
+
+  void _getHotGoods(){
+    var formData = {"page":page};
+    request("homePageBelowConten", formData: formData).then((val){
+      print(val);
+      var data =json.decode(val.toString());
+      List<Map> newGoods = (data['data'] as List).cast();
+      setState(() {
+        hotGoodsList.addAll(newGoods);
+        page++;
+
+      }); 
+    });
+  }
+
+  Widget hotTitle =Container(
+    margin: EdgeInsets.only(top: 10),
+    alignment: Alignment.center,
+    color: Colors.transparent,
+    child: Text('火爆专区'),
+  );
+
+  Widget _wrapList(){
+    if(hotGoodsList.length != 0){
+      List<Widget> listWidget = hotGoodsList.map((val){
+        return InkWell(
+          onTap: (){},
+          child: Container(
+            width: ScreenUtil().setWidth(372),
+            color: Colors.white,
+            padding: EdgeInsets.all(5.0),
+            margin: EdgeInsets.only(bottom: 3.0),
+            child: Column(
+              children: <Widget>[
+                Image.network(val['image'], width:ScreenUtil().setWidth(375)),
+                Text(
+                  val['name'],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(color: Colors.pink, fontSize: ScreenUtil().setSp(26)),
+                ),
+                Row(
+                  children: <Widget>[
+                    Text('￥${val['mallPrice']}'),
+                    Text(
+                      '￥${val["price"]}',
+                      style: TextStyle(color: Colors.black26, decoration: TextDecoration.lineThrough),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      }).toList();
+
+      return Wrap(
+        spacing: 3,
+        children: listWidget,
+      );
+    }else{
+      return Text('');
+    }
+  }
+
+
+  Widget _hotGoods(){
+    return Container(
+      child: Column(
+        children: <Widget>[
+          hotTitle,
+          _wrapList()
+        ],
+      ),
+    );
+  }
 }
+
+
 
 class SwiperDiy extends StatelessWidget {
   final List swiperDataList;
@@ -318,20 +400,20 @@ class FloorContent extends StatelessWidget {
 }
 
 
-class HotGoods extends StatefulWidget {
-  _HotGoodsState createState() => _HotGoodsState();
-}
-class _HotGoodsState extends State<HotGoods> {
-   void initState() { 
-     super.initState();
-     request('homePageBelowConten', formData: 1).then((val){
-         print(val);
-      });
-   }
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-       child:Text('1111'),
-    );
-  }
-}
+// class HotGoods extends StatefulWidget {
+//   _HotGoodsState createState() => _HotGoodsState();
+// }
+// class _HotGoodsState extends State<HotGoods> {
+//    void initState() { 
+//      super.initState();
+//      request('homePageBelowConten', formData: 1).then((val){
+//          print(val);
+//       });
+//    }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//        child:Text('1111'),
+//     );
+//   }
+// }
