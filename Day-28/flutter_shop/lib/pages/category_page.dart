@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../service/service_method.dart';
+import '../model/category.dart';
 import 'dart:convert';
 
 class CategoryPage extends StatefulWidget {
@@ -25,6 +26,9 @@ class _CategoryPageState extends State<CategoryPage> {
     await request('getCategory').then((val){
       var data =json.decode(val.toString());
       print(data);
+
+      CategoryBigListModel list =CategoryBigListModel.formJson(data["data"]);
+      list.data.forEach((item) => print(item.mallCategoryName));
     });
   }
 }
