@@ -35,13 +35,12 @@ class _CategoryPageState extends State<CategoryPage> {
 class LeftCategoryNav extends StatefulWidget {
   _LeftCategoryNavState createState() => _LeftCategoryNavState();
 }
+
 class _LeftCategoryNavState extends State<LeftCategoryNav> {
    List list=[];
 
   @override
   void initState() {
-    // TODO: implement initState
-
     _getCategory();
     super.initState();
     
