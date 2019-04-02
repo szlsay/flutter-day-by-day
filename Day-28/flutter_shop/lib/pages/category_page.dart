@@ -113,6 +113,7 @@ var listIndex = 0;
       setState(() {
         list =category.data;
       });
+      Provide.value<ChildCategory>(context).getChildCategory(list[0].bxMallSubDto);
       // list.data.forEach((item) => print(item.mallCategoryName));
     });
   }
