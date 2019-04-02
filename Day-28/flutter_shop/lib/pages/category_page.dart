@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:provide/provide.dart';
 import '../provide/child_category.dart';
+import '../model/categoryGoodsList.dart';
 
 class CategoryPage extends StatefulWidget {
   final Widget child;
@@ -110,9 +111,9 @@ var listIndex = 0;
       var data =json.decode(val.toString());
       print(data);
 
-      CategoryModel category =CategoryModel.fromJson(data);
+      CategoryModel category = CategoryModel.fromJson(data);
       setState(() {
-        list =category.data;
+        list = category.data;
       });
       Provide.value<ChildCategory>(context).getChildCategory(list[0].bxMallSubDto);
       // list.data.forEach((item) => print(item.mallCategoryName));
@@ -178,7 +179,7 @@ class CategoryGoodsList extends StatefulWidget {
   _CategoryGoodsListState createState() => _CategoryGoodsListState();
 }
 class _CategoryGoodsListState extends State<CategoryGoodsList> {
-
+  List list = [];
   @override
   void initState() {
     _getGoodList();
@@ -192,15 +193,20 @@ class _CategoryGoodsListState extends State<CategoryGoodsList> {
     );
   }
 
-  void _getGoodList()async {
+void _getGoodList()async {
     var data={
       'categoryId':'4',
       'categorySubId':"",
       'page':1
     };
     await request('getMallGoods',formData:data ).then((val){
-        var data = json.decode(val.toString());
-        print('分类商品列表：>>>>>>>>>>>>>${data}');
+        var  data = json.decode(val.toString());
+        
+        CategoryGoodsListModel goodsList=  CategoryGoodsListModel.fromJson(data);
+        setState(() {
+         list= goodsList.data;
+        });
+        print('>>>>>>>>>>>>>55555>>>>>>:${list[0].goodsName}');
     });
   }
 }
