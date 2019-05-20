@@ -1,4 +1,4 @@
-package com.example.day01;
+package com.example.demo;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
